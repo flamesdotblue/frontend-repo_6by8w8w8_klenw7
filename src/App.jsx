@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Services from './components/Services';
+import WhyChooseUs from './components/WhyChooseUs';
+import CTA from './components/CTA';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <header className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#" className="flex items-center gap-2">
+          <div className="h-6 w-6 rounded bg-gradient-to-br from-cyan-400 to-indigo-500" />
+          <span className="font-semibold tracking-tight">Code Tech Solutions</span>
+        </a>
+        <nav className="hidden items-center gap-6 text-sm text-slate-200/90 sm:flex">
+          <a href="#services" className="hover:text-white">Services</a>
+          <a href="#cta" className="hover:text-white">Contact</a>
+        </nav>
+        <a
+          href="#cta"
+          className="hidden rounded-full bg-white px-4 py-2 text-xs font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100 sm:inline-block"
+        >
+          Get a proposal
+        </a>
+      </header>
+
+      <main>
+        <Hero />
+        <Services />
+        <WhyChooseUs />
+        <CTA />
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
